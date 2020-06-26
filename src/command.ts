@@ -1,4 +1,4 @@
-import CordKit from './mod'
+import { CordKit } from './mod'
 import eris from 'eris'
 
 /**

@@ -5,7 +5,7 @@ import Command, { ArgSet } from './command'
  * CordKit is the main tester.
  * It has an Eris Discord client and contains the commands Map; you should add to this.
  */
-export default class CordKit {
+export class CordKit {
 	client = new eris.Client(this.token)
 	private commands = new Map<string, Command>()
 
