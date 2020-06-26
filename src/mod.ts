@@ -1,5 +1,5 @@
 import * as eris from 'eris'
-import Command from './command'
+import Command, { ArgSet } from './command'
 
 /**
  * CordKit is the main tester.
@@ -14,5 +14,16 @@ export default class CordKit {
 	 * @param token The tester's bot token.
 	 * @param botID The ID of the bot to test.
 	 */
-	constructor(private token: string, public botID: string) {}
+	constructor(
+		private token: string,
+		public botID: string,
+		public channelID: string,
+		public invokerGenerator = CordKit.defaultInvokerGenerator
+	) {}
+
+	private static defaultInvokerGenerator(cmdName: string, args?: ArgSet) {
+		return `${cmdName} ${args?.positional.map(arg =>
+			' ' + arg.includes(' ') ? `"${arg}"` : arg
+		)}`
+	}
 }
