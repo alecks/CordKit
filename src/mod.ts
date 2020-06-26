@@ -7,7 +7,7 @@ import Command, { ArgSet } from './command'
  */
 export default class CordKit {
 	client = new eris.Client(this.token)
-	commands = new Map<string, Command>()
+	private commands = new Map<string, Command>()
 
 	/**
 	 * Constructs CordKit.
@@ -25,5 +25,11 @@ export default class CordKit {
 		return `${cmdName} ${args?.positional.map(arg =>
 			' ' + arg.includes(' ') ? `"${arg}"` : arg
 		)}`
+	}
+
+	command(name: string, args?: ArgSet): Command {
+		const cmd = new Command(this, name, args)
+		this.commands.set(name, cmd)
+		return cmd
 	}
 }
