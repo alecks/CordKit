@@ -27,9 +27,35 @@ export default class CordKit {
 		)}`
 	}
 
+	/**
+	 * Adds a command.
+	 * @param name The name of the command.
+	 * @param args The default arguments to pass to the command if they aren't passed to `test`.
+	 */
 	command(name: string, args?: ArgSet): Command {
 		const cmd = new Command(this, name, args)
 		this.commands.set(name, cmd)
 		return cmd
+	}
+
+	/**
+	 * Connects the client to Discord.
+	 */
+	connect() {
+		return this.client.connect()
+	}
+
+	/**
+	 * Tests all commands.
+	 * This calls `connect`.
+	 */
+	async test() {
+		await this.client.connect()
+
+		const promises: Promise<eris.Message<eris.TextChannel>>[] = []
+		this.commands.forEach(command => {
+			promises.push(command.test())
+		})
+		return Promise.all(promises)
 	}
 }
