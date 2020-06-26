@@ -5,5 +5,8 @@
   "main": "dist/mod.js",
   "repository": "git@github.com:fjah/CordKit.git",
   "author": "Alex P. <alexeek@protonmail.com>",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "eris": "^0.13.3"
+  }
 }
