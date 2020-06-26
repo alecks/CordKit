@@ -5,5 +5,5 @@ export default class CordKit {
 	client = new eris.Client(this.token)
 	commands = new Map<string, Command>()
 
-	constructor(private token: string) {}
+	constructor(private token: string, public botID: string) {}
 }
