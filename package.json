@@ -7,7 +7,8 @@
   "author": "Alex P. <alexeek@protonmail.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "tsc"
   },
   "dependencies": {
     "eris": "^0.13.3"
