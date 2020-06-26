@@ -22,9 +22,7 @@ export class CordKit {
 	) {}
 
 	private static defaultInvokerGenerator(cmdName: string, args?: ArgSet) {
-		return `${cmdName} ${args?.positional.map(arg =>
-			' ' + arg.includes(' ') ? `"${arg}"` : arg
-		)}`
+		return `${cmdName}${args?.positional.map(arg => ' ' + (arg.includes(' ') ? `"${arg}"` : arg)).join('')}`
 	}
 
 	/**
