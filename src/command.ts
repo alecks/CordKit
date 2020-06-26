@@ -32,7 +32,7 @@ export default class Command {
 	 * Runs the test.
 	 * @param args The specific arguments to use for this test. If undefined, the fallback args of the class will be used.
 	 */
-	async test(args = this.args) {
+	test(args = this.args) {
 		const invoker = this.cordkit.invokerGenerator(this.name, args)
 		const channel = this.cordkit.client.getChannel(
 			this.channelID || this.cordkit.channelID
