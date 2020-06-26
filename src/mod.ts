@@ -39,19 +39,9 @@ export class CordKit {
 	}
 
 	/**
-	 * Connects the client to Discord.
-	 */
-	connect() {
-		return this.client.connect()
-	}
-
-	/**
 	 * Tests all commands.
-	 * This calls `connect`.
 	 */
 	async test() {
-		await this.client.connect()
-
 		const promises: Promise<eris.Message<eris.TextChannel>>[] = []
 		this.commands.forEach(command => {
 			promises.push(command.test())
