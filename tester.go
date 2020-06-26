@@ -20,6 +20,8 @@ type Tester struct {
 	// Client is the Disgord client to use. When you call Connect, this will be created automatically *if* it doesn't
 	// already exist.
 	Client *disgord.Client
+
+	commands map[string]Command
 }
 
 // Connect assigns the Tester a *disgord.Client and connects to Discord.

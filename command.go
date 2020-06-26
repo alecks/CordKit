@@ -13,3 +13,7 @@ type CommandContext struct {
 	// Ex: b="Hello, world!" a=1
 	KWArgs map[string]string
 }
+
+// Command is a generic command test.
+type Command struct {
+}
