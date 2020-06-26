@@ -1,4 +1,4 @@
-import * as eris from 'eris'
+import eris from 'eris'
 import Command, { ArgSet } from './command'
 
 /**
