@@ -7,5 +7,8 @@ interface ArgSet {
  * but it can be customised.
  */
 export default class Command {
-	constructor(public name: string, public args: ArgSet[]) {}
+	constructor(public name: string, public args: ArgSet) {}
+
+	test(args?: ArgSet) {
+	}
 }
