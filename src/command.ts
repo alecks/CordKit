@@ -1,5 +1,5 @@
 import CordKit from './mod'
-import Eris from 'eris'
+import eris from 'eris'
 
 /**
  * A set of arguments to be used when generating command invokers.
@@ -37,7 +37,7 @@ export default class Command {
 		const channel = this.cordkit.client.getChannel(
 			this.channelID || this.cordkit.channelID
 		)
-		if (!(channel instanceof Eris.TextChannel)) throw new TypeError("channel isn't instanceof Eris.TextChannel");
+		if (!(channel instanceof eris.TextChannel)) throw new TypeError("channel isn't instanceof Eris.TextChannel");
 
 		// TOOD: Add a wrapper over eris.Message that includes operations that make testing easier. This is WIP.
 		return channel.createMessage(invoker);
